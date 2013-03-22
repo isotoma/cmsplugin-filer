@@ -1,0 +1,22 @@
+{% load i18n sekizai_tags cmsplugin_filer_js_tmp %}
+
+<!--div id="flash-plugin-{{ object.id }}">{% trans 'Missing flash plugin. Download <a href="http://adobe.com/flashplayer">here</a>.' %}</div-->
+
+{% addtoblock "js" %}
+  <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/audiojs/audio.min.js"></script>
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+  <script type="text/javascript">
+    audiojs.events.ready(function() {
+        var as = audiojs.createAll();
+    });
+  </script>
+<!--audio src="http://myrmidon.isotomadev.com/~neil/The_Jack.mp3" type="audio/mpeg" preload="auto" /-->
+
+<audio  src="{{ object.get_audio }}" 
+        preload="auto" 
+        {{ object.get_autoplay }} 
+        {{ object.get_loop }} />
+{% endaddtoblock %}
+
