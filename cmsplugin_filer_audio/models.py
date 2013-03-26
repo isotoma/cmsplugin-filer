@@ -11,11 +11,7 @@ class FilerAudio(CMSPlugin):
     # player settings
     audio = FilerFileField(verbose_name=_('audio file'), help_text=_('use .mp3 file'), blank=True, null=True)
     audio_url = models.CharField(_('audio url'), max_length=255, help_text=_('audio clip URL e.g. https://soundcloud.com/onusound/ghetto-priest-masters-of-deception'), blank=True, null=True)
-#    image = FilerImageField(verbose_name=_('image'), help_text=_('preview image file'), null=True, blank=True, related_name='filer_video_image')
-    
- #   width = models.PositiveSmallIntegerField(_('width'), default=settings.VIDEO_WIDTH)
-  #  height = models.PositiveSmallIntegerField(_('height'), default=settings.VIDEO_HEIGHT)
-    
+    audio_display_title = models.CharField(_('display text'), max_length=255,help_text=_('name of audio clip that you\'d like displayed'), blank=False, null=False)
     auto_play = models.BooleanField(_('auto play'), default=settings.AUDIO_AUTOPLAY)
     loop = models.BooleanField(_('loop'), default=settings.AUDIO_LOOP)
     
