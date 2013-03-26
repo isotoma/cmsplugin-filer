@@ -7,12 +7,12 @@ def read(fname):
 setup(
     name = "cmsplugin-filer",
     version = "0.9.4",
-    url = 'http://github.com/stefanfoulis/cmsplugin-filer',
+    url = 'http://github.com/isotoma/cmsplugin-filer',
     license = 'BSD',
     description = "django-cms plugins for django-filer",
     long_description = read('README.rst'),
-    author = 'Stefan Foulis',
-    author_email = 'stefan.foulis@gmail.com',
+    author = 'Neil Frow',
+    author_email = 'neil.frow@isotoma.com',
     packages = find_packages(),
     #package_dir = {'':'src'},
     classifiers = [

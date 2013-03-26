@@ -4,19 +4,20 @@
 
 {% addtoblock "js" %}
   <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/audiojs/audio.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/soundmanager2/script/soundmanager2-jsmin.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/soundmanager2/script/inlineplayer.js"></script>
+{% endaddtoblock %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}myplugin/css/astylesheet.css"></script>{% endaddtoblock %}
+
+{% addtoblock "css" %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/soundmanager2/inline.css" />
 {% endaddtoblock %}
 
-{% addtoblock "js" %}
-  <script type="text/javascript">
-    audiojs.events.ready(function() {
-        var as = audiojs.createAll();
-    });
-  </script>
-<!--audio src="http://myrmidon.isotomadev.com/~neil/The_Jack.mp3" type="audio/mpeg" preload="auto" /-->
+<ul class="graphic">
 
-<audio  src="{{ object.get_audio }}" 
-        preload="auto" 
-        {{ object.get_autoplay }} 
-        {{ object.get_loop }} />
-{% endaddtoblock %}
+  <li><a href="{{ object.get_audio }}">London Is Swinging By His Neck</a></li>
+
+ </ul>
+
+
 
