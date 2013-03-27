@@ -33,12 +33,12 @@ class FilerAudio(CMSPlugin):
 
     def get_autoplay(self):
         if self.auto_play:
-            return 'autoplay' 
+            return 'true' 
         else:
-            return ''
-    
+            return 'false'
+            
     def get_loop(self):
         if self.loop: 
-            return 'loop' 
+            return '999' 
         else:
-            return ''
+            return '1'

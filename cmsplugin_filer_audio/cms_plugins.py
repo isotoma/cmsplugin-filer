@@ -18,33 +18,15 @@ class FilerAudioPlugin(CMSPluginBase):
 
     general_fields = [
         ('audio', 'audio_url'),
-#        'image',
+        'audio_display_title',
         'auto_play',
         'loop',
     ]
-#    color_fields = [
-#        'bgcolor',
-#        'textcolor',
-#        'seekbarcolor',
-#        'seekbarbgcolor',
-##        'loadingbarcolor',
-#        'buttonoutcolor',
-#        'buttonovercolor',
-#        'buttonhighlightcolor',
-#    ]
-
     fieldsets = [
         (None, {
             'fields': general_fields,
         }),
     ]
-#    if settings.VIDEO_PLUGIN_ENABLE_ADVANCED_SETTINGS:
-#        fieldsets += [
-#            (_('Color Settings'), {
-#                'fields': color_fields,
-#                'classes': ('collapse',),
-#            }),
-#        ]
 
     def render(self, context, instance, placeholder):
         context.update({
@@ -53,6 +35,4 @@ class FilerAudioPlugin(CMSPluginBase):
         })
         return context
 
-#    def icon_src(self, instance):
-#        return os.path.normpath(u"%s/icons/video_%sx%s.png" % (FILER_STATICMEDIA_PREFIX, 32, 32,))
 plugin_pool.register_plugin(FilerAudioPlugin)

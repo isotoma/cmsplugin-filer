@@ -1,23 +1,24 @@
 {% load i18n sekizai_tags cmsplugin_filer_js_tmp %}
 
-<!--div id="flash-plugin-{{ object.id }}">{% trans 'Missing flash plugin. Download <a href="http://adobe.com/flashplayer">here</a>.' %}</div-->
-
 {% addtoblock "js" %}
-  <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/audiojs/audio.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/soundmanager2/script/soundmanager2-jsmin.js"></script>
-      <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/soundmanager2/script/inlineplayer.js"></script>
+    <script>
+    window.STATIC_URL = '{{ STATIC_URL }}';
+    window.LOOPS = '{{ object.get_loop }}';
+    window.AUTOPLAY = {{ object.get_autoplay }};
+    </script>
+    <script type="text/javascript" src="{{ STATIC_URL }}cmsplugin_filer_audio/js/soundmanager2-nodebug-jsmin.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}cmsplugin_filer_audio/js/inlineplayer.js"></script>
+    
 {% endaddtoblock %}
-{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}myplugin/css/astylesheet.css"></script>{% endaddtoblock %}
-
 {% addtoblock "css" %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/soundmanager2/inline.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cmsplugin_filer_audio/css/inlineplayer.css" />
 {% endaddtoblock %}
 
 <ul class="graphic">
-
-  <li><a href="{{ object.get_audio }}">London Is Swinging By His Neck</a></li>
-
- </ul>
+    <li>
+        <a href="{{ object.get_audio }}">{{ object.audio_display_title }}</a>
+    </li>
+</ul>
 
 
 
