@@ -1,9 +1,11 @@
-===============
-cmsplugin-filer
-===============
+=======================
+isotoma-cmsplugin-filer
+=======================
 
-A set of cms plugins that replace the plugins shipped with django-cms with
-versions that use file fields from django-filer.
+A set of cms plugins that replaces the plugins shipped with django-cms with
+versions that use file fields from django-filer. This set is based heavily on 
+that developed by Stefan Foulis (https://github.com/stefanfoulis), adding
+support for embedding audio.
 
 Dependencies
 ============
@@ -26,6 +28,7 @@ add the plugins to ``INSTALLED_APPS``::
         'cmsplugin_filer_image',
         'cmsplugin_filer_teaser',
         'cmsplugin_filer_video',
+        'cmsplugin_filer_audio',
         ...
     )
 
@@ -35,13 +38,6 @@ You can also set ``FILER_IMAGE_USE_ICON`` in your ``settings.py`` to configure `
 
 The default template in ``cmsplugin_filer_image`` expects the subject location functionality to be enabled.
 Follow: http://django-filer.readthedocs.org/en/0.9.2/installation.html#subject-location-aware-cropping
-
-Upgrading
-=========
-
-Please note that current develop version moved plugin packages from `src` directory to project root.
-This may break your installation if upgrading.
-Uninstall any previous `cmsplugin_filer` installation (either from Pypi or from github repository) and reinstall it.
 
 
 Integrations

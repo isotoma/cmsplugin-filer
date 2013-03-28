@@ -5,8 +5,8 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "cmsplugin-filer",
-    version = "0.9.4",
+    name = "isotoma-cmsplugin-filer",
+    version = "0.1.0",
     url = 'http://github.com/isotoma/cmsplugin-filer',
     license = 'BSD',
     description = "django-cms plugins for django-filer",
